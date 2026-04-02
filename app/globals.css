@@ -369,6 +369,10 @@ body {
     transform 0.7s ease;
 }
 
+.mobileMainButton {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+}
+
 /* ============================= */
 /* RESPONSIVO */
 /* ============================= */
@@ -412,7 +416,86 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+  .heroContainer {
+    background: #ededed;
+    padding: 26px 18px 40px;
+    min-height: 100vh;
+  }
+
+  .heroLeft {
+    width: 100%;
+    height: auto;
+  }
+
+  .heroRight {
+    width: 100%;
+    height: auto;
+    background: transparent;
+  }
+
+  .heroRight > div {
+    align-items: flex-start;
+    padding-top: 6px;
+  }
+
+  .heroWatermark {
+    display: none;
+  }
+
+  .rightTextWrap {
+    max-width: none;
+    padding-right: 130px;
+  }
+
+  .rightTextWrap h2 {
+    font-size: 2.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  .rightTextWrap p {
+    max-width: none;
+  }
+
+  .mobileMainButton {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .bottleWrapper {
+    left: auto;
+    right: -6%;
+    top: 54%;
+    transform: translateY(-54%);
+    width: 230px;
+  }
+
+  .bottleGlow {
+    opacity: 0.18;
+  }
+}
+
 @media (max-width: 640px) {
+  .heroContainer {
+    padding: 22px 16px 34px;
+  }
+
+  .rightTextWrap {
+    padding-right: 118px;
+  }
+
+  .rightTextWrap h2 {
+    font-size: 2.1rem;
+  }
+
+  .bottleWrapper {
+    right: -14%;
+    width: 210px;
+    top: 52%;
+    transform: translateY(-52%);
+  }
+
   .heroInfoTitle {
     font-size: 1.65rem;
   }
@@ -436,5 +519,41 @@ body {
 
   .metricValue {
     font-size: 1.2rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   ADICIONE ESTAS CLASSES NO SEU globals.css
+   (junto com as animações bottleLayer que já existem)
+───────────────────────────────────────────────────── */
+
+/* Fade + slide para o texto mobile */
+.mobileTextIn {
+  animation: mobileIn 0.45s ease forwards;
+}
+
+.mobileTextOut {
+  animation: mobileOut 0.3s ease forwards;
+}
+
+@keyframes mobileIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
   }
 }
